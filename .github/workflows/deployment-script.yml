@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        # Let github-push-action authenticate with ORG_OWNER_GITHUB_TOKEN below.
+        persist-credentials: false
     - name: Setup node
       uses: actions/setup-node@v2
       with:
