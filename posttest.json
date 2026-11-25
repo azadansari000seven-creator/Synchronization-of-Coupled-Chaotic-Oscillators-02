@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "In the model, what is the role of κ(x₂ − x₁) in the first oscillator's x equation?",
+      "answers": {
+        "a": "It measures the simulation time.",
+        "b": "It couples oscillator 1 to oscillator 2 through their x values.",
+        "c": "It changes the parameter a in the y equation.",
+        "d": "It adds random noise to oscillator 1."
+      },
+      "explanations": {
+        "a": "Time is represented by t; this term describes coupling.",
+        "b": "Correct. The term depends on the x difference and is scaled by the coupling strength κ.",
+        "c": "The parameter a is fixed in the y equation.",
+        "d": "The model is deterministic and this term is not random noise."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What does a small, sustained RMS error indicate in this experiment?",
+      "answers": {
+        "a": "The recent x₁ and x₂ signals are close on average.",
+        "b": "The oscillators have stopped evolving.",
+        "c": "The phase portrait is a time series.",
+        "d": "The coupling strength is zero."
+      },
+      "explanations": {
+        "a": "Correct. RMS error summarizes the recent magnitude of the x-signal difference.",
+        "b": "Small difference does not mean the signals are stationary.",
+        "c": "The phase portrait plots state variables against one another.",
+        "d": "At zero coupling the systems evolve independently; the error is not forced to be small."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why should you observe the error over time instead of relying on one low reading?",
+      "answers": {
+        "a": "A brief dip may not represent sustained agreement between the signals.",
+        "b": "The error plot only works once.",
+        "c": "The RMS error is the same as the coupling slider value.",
+        "d": "A single reading changes the equations."
+      },
+      "explanations": {
+        "a": "Correct. Sustained low error and overlapping traces provide stronger evidence than a brief dip.",
+        "b": "The error plot updates continuously as the model runs.",
+        "c": "RMS error is calculated from the signal difference, not copied from κ.",
+        "d": "A displayed reading does not alter the equations."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is a phase portrait in this simulation?",
+      "answers": {
+        "a": "A graph of x against elapsed simulation time",
+        "b": "A graph of x against y for each oscillator",
+        "c": "A chart of the quiz score against κ",
+        "d": "A table of the fixed parameters only"
+      },
+      "explanations": {
+        "a": "That describes the signal-over-time plot.",
+        "b": "Correct. Each path shows the relationship between x and y as the system evolves.",
+        "c": "The simulator does not graph quiz scores.",
+        "d": "The phase portrait uses evolving state variables."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which conclusion is best supported by the simulator?",
+      "answers": {
+        "a": "Every pair of chaotic oscillators synchronizes for any nonzero coupling.",
+        "b": "The model proves all real oscillators behave exactly like the simulation.",
+        "c": "For the selected model and settings, coupling can reduce the difference; the plots should be checked for sustained agreement.",
+        "d": "Synchronization can be identified from the coupling value alone."
+      },
+      "explanations": {
+        "a": "Synchronization depends on the model and parameter values; it is not guaranteed for every nonzero coupling.",
+        "b": "This is an idealized numerical model and does not represent every physical system.",
+        "c": "Correct. The conclusion is limited to the model and should be supported by the observed signals and error.",
+        "d": "The state trajectories and their error provide the relevant evidence."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    }
+  ]
+}

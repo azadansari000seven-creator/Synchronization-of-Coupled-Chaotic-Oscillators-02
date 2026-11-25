@@ -1,0 +1,73 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which statement best describes a chaotic system?",
+      "answers": {
+        "a": "Its motion is random and has no governing rules.",
+        "b": "It follows deterministic rules and can be sensitive to initial conditions.",
+        "c": "It always settles to a fixed point.",
+        "d": "It repeats exactly after one time step."
+      },
+      "explanations": {
+        "a": "A deterministic model follows rules, even when its long-term behavior is difficult to predict.",
+        "b": "Correct. Chaos is deterministic and can show sensitive dependence on initial conditions.",
+        "c": "A chaotic trajectory need not settle to a fixed point.",
+        "d": "A chaotic trajectory is generally aperiodic rather than repeating exactly after a fixed step."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What happens to the coupling term when κ = 0?",
+      "answers": {
+        "a": "The two oscillators do not influence each other through that term.",
+        "b": "Both oscillators stop moving.",
+        "c": "The oscillators become identical immediately.",
+        "d": "The model parameters a, b, and c become zero."
+      },
+      "explanations": {
+        "a": "Correct. With κ = 0, the terms κ(x₂ − x₁) and κ(x₁ − x₂) vanish.",
+        "b": "The coupling is removed, but each oscillator continues to follow its own equations.",
+        "c": "No coupling means there is no coupling-driven convergence.",
+        "d": "κ is independent of the fixed model parameters a, b, and c."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which plot directly shows the difference between the two x signals?",
+      "answers": {
+        "a": "The phase portrait x versus y",
+        "b": "The synchronization error |x₁ − x₂|",
+        "c": "The coupling slider",
+        "d": "The elapsed time display"
+      },
+      "explanations": {
+        "a": "The phase portrait compares each system's path in its x-y plane.",
+        "b": "Correct. The error plot is the absolute difference between x₁ and x₂.",
+        "c": "The slider sets a parameter and does not show the resulting difference.",
+        "d": "Elapsed time shows the model clock, not the signal difference."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What does increasing the initial difference control do in this simulator?",
+      "answers": {
+        "a": "Changes the value of c",
+        "b": "Changes the time step of the numerical method",
+        "c": "Starts the two oscillators farther apart in x",
+        "d": "Turns off both oscillators"
+      },
+      "explanations": {
+        "a": "The slider changes an initial state, not the fixed parameter c.",
+        "b": "The time step remains fixed at 0.025 model time units.",
+        "c": "Correct. The slider sets the initial x offset between the two systems.",
+        "d": "The initial difference does not stop the model."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}

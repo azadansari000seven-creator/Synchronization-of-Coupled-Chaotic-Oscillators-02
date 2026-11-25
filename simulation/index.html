@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive simulation of two symmetrically coupled Rössler oscillators.">
+  <title>Synchronization of Coupled Chaotic Oscillators</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <main class="chaos-lab" id="chaosLab">
+    <header class="sim-header">
+      <div>
+        <p class="eyebrow"><span class="pulse-dot"></span> NONLINEAR DYNAMICS · INTERACTIVE SIMULATION</p>
+        <h1>Synchronization of <span>Coupled Chaotic Oscillators</span></h1>
+        <p class="sim-lead">Change the coupling strength and observe whether two initially different chaotic systems begin to move together.</p>
+      </div>
+      <div class="model-chip"><span class="chip-symbol">∿</span><span><b>Rössler system</b><small>two identical oscillators</small></span></div>
+    </header>
+
+    <section class="sim-layout" aria-label="Oscillator simulation">
+      <aside class="control-panel" aria-label="Simulation controls">
+        <div class="panel-heading"><span class="panel-icon">⚙</span><span><b>Experiment controls</b><small>Adjust a parameter and observe</small></span></div>
+
+        <div class="control-block">
+          <label class="control-label" for="coupling"><span>Coupling strength <i>κ</i></span><output id="kValue" for="coupling">0.10</output></label>
+          <input id="coupling" type="range" min="0" max="1.2" step="0.01" value="0.10" aria-describedby="couplingHint">
+          <div class="range-labels"><span>0 · uncoupled</span><span>1.2 · strong</span></div>
+          <p class="control-hint" id="couplingHint">At κ = 0, the oscillators do not influence each other.</p>
+        </div>
+
+        <div class="control-block">
+          <label class="control-label" for="difference"><span>Initial difference</span><output id="dValue" for="difference">0.20</output></label>
+          <input id="difference" type="range" min="0.02" max="1.00" step="0.01" value="0.20">
+          <div class="range-labels"><span>nearly alike</span><span>more different</span></div>
+        </div>
+
+        <div class="button-group">
+          <button id="runBtn" class="button button-primary" type="button" aria-pressed="true">Ⅱ &nbsp; Pause</button>
+          <button id="resetBtn" class="button button-secondary" type="button">↺ &nbsp; Reset</button>
+        </div>
+
+        <div class="sync-indicator" role="status" aria-live="polite">
+          <span class="sync-light" id="statusLight"></span>
+          <span><b id="syncStatus">Observing the systems</b><small id="syncDetail">Compare the traces and error plot.</small></span>
+        </div>
+
+        <div class="model-note">
+          <span class="note-label">MODEL PARAMETERS</span>
+          <p>a = 0.2 &nbsp; b = 0.2 &nbsp; c = 5.7</p>
+          <small>The systems are coupled symmetrically through their x variables.</small>
+        </div>
+      </aside>
+
+      <div class="plot-area">
+        <article class="plot-card plot-wide">
+          <div class="plot-heading"><div><span class="plot-index">01</span><h2>Oscillator signals over time</h2></div><span class="legend"><i class="key-one"></i>x₁ <i class="key-two"></i>x₂</span></div>
+          <canvas id="timePlot" role="img" aria-label="Time plot of the x variables of both oscillators">Signal plot</canvas>
+          <p class="axis-caption">SIMULATION TIME →</p>
+        </article>
+        <div class="plot-pair">
+          <article class="plot-card">
+            <div class="plot-heading"><div><span class="plot-index">02</span><h2>Synchronization error</h2></div><span class="plot-units">|x₁ − x₂|</span></div>
+            <canvas id="errorPlot" role="img" aria-label="Absolute difference between oscillator x variables">Error plot</canvas>
+            <p class="axis-caption">SIMULATION TIME →</p>
+          </article>
+          <article class="plot-card">
+            <div class="plot-heading"><div><span class="plot-index">03</span><h2>Phase portrait</h2></div><span class="plot-units">x vs y</span></div>
+            <canvas id="phasePlot" role="img" aria-label="Phase portraits of both oscillators">Phase portrait</canvas>
+            <p class="axis-caption">x → &nbsp; · &nbsp; y ↑</p>
+          </article>
+        </div>
+        <div class="measurement-strip" aria-label="Live measurements">
+          <div><span>RECENT RMS ERROR <small>(last 100 samples)</small></span><strong id="rmsValue">—</strong></div>
+          <span class="measurement-divider"></span>
+          <div><span>ELAPSED SIMULATION TIME</span><strong><span id="elapsedValue">0.0</span> <small>units</small></strong></div>
+          <span class="measurement-help">A smaller error means the x signals are closer.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="experiment-guide" aria-label="Suggested experiment">
+      <div class="guide-heading"><span class="guide-number">TRY IT</span><div><h2>Investigate the effect of coupling</h2><p>Use the controls and record the recent RMS error at each setting.</p></div></div>
+      <div class="guide-steps">
+        <div><span>1</span><p>Set κ to <b>0</b>. Observe how the traces differ.</p></div>
+        <div><span>2</span><p>Increase κ slowly. Wait for the error to settle.</p></div>
+        <div><span>3</span><p>Repeat with a larger initial difference.</p></div>
+        <div><span>4</span><p>Use the plots as evidence in your conclusion.</p></div>
+      </div>
+    </section>
+
+    <details class="equation-panel">
+      <summary>View the equations used in this simulation</summary>
+      <div class="equation-content">
+        <p><b>Oscillator 1</b> &nbsp; ẋ₁ = −y₁ − z₁ + κ(x₂ − x₁) &nbsp; · &nbsp; ẏ₁ = x₁ + a y₁ &nbsp; · &nbsp; ż₁ = b + z₁(x₁ − c)</p>
+        <p><b>Oscillator 2</b> &nbsp; ẋ₂ = −y₂ − z₂ + κ(x₁ − x₂) &nbsp; · &nbsp; ẏ₂ = x₂ + a y₂ &nbsp; · &nbsp; ż₂ = b + z₂(x₂ − c)</p>
+      </div>
+    </details>
+    <p class="sim-footer">This is a numerical model for learning. Results depend on the stated equations, parameters, initial states, and numerical time step.</p>
+  </main>
+  <script src="./js/main.js"></script>
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>
