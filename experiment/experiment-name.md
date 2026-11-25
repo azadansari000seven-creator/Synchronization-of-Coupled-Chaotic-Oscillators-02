@@ -1,1 +1,1 @@
-## Experiment name
+Synchronization of Coupled Chaotic Oscillators

@@ -1,11 +1,15 @@
-EMPTY
-<!-- Remove all lines above this line before making changes to the file -->
-### Subject Matter Experts
-| SNo. | Name | Email | Institute | ID |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | name | email | institute | id |
+## Contributors
+
+Please complete the names and affiliations with the instructor before submission. No personal contact details have been added without confirmation.
+
+### Subject matter experts
+
+| No. | Name | Email | Institute | ID |
+|---:|---|---|---|---|
+| 1 | To be provided by instructor | To be provided | To be provided | To be provided |
 
 ### Developers
-| SNo. | Name | Email | Institute | ID |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | name | email | institute | id |
+
+| No. | Name | Email | Institute | ID |
+|---:|---|---|---|---|
+| 1 | Student developer | To be provided | To be provided | To be provided |

@@ -1,85 +1,44 @@
-#### Please use the [reference](https://github.com/virtual-labs/ph3-exp-dev-process/blob/main/pedagogy/README.org) document to fill this template.  Follow the [link](https://github.com/virtual-labs/ph3-exp-dev-process/tree/main/sample/pedagogy) to view a sample pedagogy document.
-
 ## Pedagogy
-<p align="center">
 
+**Experiment:** Synchronization of Coupled Chaotic Oscillators  
+**Discipline:** Physical Sciences  
+**Lab:** Nonlinear Dynamics and Chaos Lab
 
-<br>
-<b> Experiment : Name of the experiment	 <a name="top"></a> <br>
-</p>
+### 1. Focus area
 
-<b>Discipline | Fill your discipline name here <b> 
-:--|:--|
-<b> Lab | Fill your lab name here<b> 
-<b> Experiment|  Fill your experiment name here   <b> 
+Reinforce nonlinear dynamics and synchronization concepts through a guided numerical experiment.
 
+### 2. Learning objectives and cognitive level
 
-<h4> [1. Focus Area](#LO)
-<h4> [2. Learning Objectives ](#LO)
-<h4> [3. Instructional Strategy](#IS)
-<h4> [4. Task & Assessment Questions](#AQ)
-<h4> [5. Simulator Interactions](#SI)
-<hr>
+| No. | Learning objective | Cognitive level | Action verb |
+|---:|---|---|---|
+| 1 | Describe how the coupling term changes the state equations of two oscillators. | Understand | Explain |
+| 2 | Compare uncoupled and coupled trajectories using time signals and phase portraits. | Analyze | Compare |
+| 3 | Use sustained low synchronization error as evidence when drawing a conclusion. | Evaluate | Justify |
+| 4 | Investigate how initial difference affects the observed transient. | Analyze | Investigate |
 
-<a name="LO"></a>
-#### 1. Focus Area : Reinforce theoretical concept.
+### 3. Instructional strategy
 
-#### 2. Learning Objectives and Cognitive Level
+**Strategy:** Guided inquiry and parameter exploration  
+**Assessment method:** Pre-test, simulation observations, observation table, analysis questions, and post-test.
 
+Students first predict what will happen when coupling is absent. They then vary one control at a time, record the RMS error, and use the signal and phase plots to check whether their prediction is supported. The procedure emphasizes evidence over memorizing a presumed threshold.
 
-Sr. No |	Learning Objective	| Cognitive Level | Action Verb
-:--|:--|:--|:-:
-1.|   <br>   |    |   
-2.|   <br>   |    |   
-3.|   <br>   |    |   
+### 4. Tasks and assessment questions
 
-<br/>
-<div align="right">
-    <b><a href="#top">↥ back to top</a></b>
-</div>
-<br/>
-<hr>
+| No. | Learning objective | Student task | Assessment question |
+|---:|---|---|---|
+| 1 | Explain the coupling term. | Set κ to zero, then increase it. | Which term allows oscillator 1 to respond to oscillator 2? |
+| 2 | Compare trajectories. | Observe signal and phase plots at several κ values. | How does the relationship between x₁ and x₂ change? |
+| 3 | Justify a conclusion. | Record error readings at multiple times and settings. | What sustained evidence supports or weakens a synchronization claim? |
+| 4 | Investigate initial conditions. | Increase the initial difference and repeat a coupling setting. | How does the initial difference affect the observed transient? |
 
-<a name="IS"></a>
-#### 3. Instructional Strategy
-###### Name of Instructional Strategy  :    <u>   
-###### Assessment Method:   
+### 5. Simulator interactions
 
-<u> <b>Description: </b>    </u>
-<br>
-    
-
-<br/>
-<div align="right">
-    <b><a href="#top">↥ back to top</a></b>
-</div>
-<br/>
-<hr>
-
-<a name="AQ"></a>
-#### 4. Task & Assessment Questions:
-
-  
-<br>
-
-Sr. No |	Learning Objective	| Task to be performed by <br> the student  in the simulator | Assessment Questions as per LO & Task
-:--|:--|:--|:-:
-1.|   <br>  |   <br>  | <br> 
-2.|   <br>  |   <br>  | <br> 
-
-
-<div align="right">
-    <b><a href="#top">↥ back to top</a></b>
-</div>
-<br/>
-<hr>
-
-<a name="SI"></a>
-
-#### 4. Simulator Interactions:
-<br>
-
-Sr.No | What Students will do? |	What Simulator will do?	| Purpose of the task
-:--|:--|:--|:--:
-1.|  <br> | <br> |   
-2.|  <br> | <br> |
+| No. | Student action | Simulator response | Purpose |
+|---:|---|---|---|
+| 1 | Set coupling strength κ to zero. | The coupling terms vanish while both Rössler systems continue evolving. | Establish an uncoupled comparison. |
+| 2 | Increase κ with the range control. | The model uses the new coupling value and updates all plots. | Explore the effect of coupling. |
+| 3 | Change initial difference. | The model restarts with a different initial x separation. | Compare sensitivity to starting states. |
+| 4 | Pause, run, or reset. | The simulation stops, resumes, or restarts. | Inspect the plots and repeat observations. |
+| 5 | Read RMS error and elapsed time. | Live values summarize the recent x difference and model time. | Quantify and report observations. |

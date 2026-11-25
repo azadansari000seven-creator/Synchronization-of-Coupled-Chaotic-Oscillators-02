@@ -1,1 +1,28 @@
-### This directory contains mindmap used in [storyboard document](https://github.com/virtual-labs/ph3-exp-dev-process/blob/main/storyboard/README.org).
+### Concept map
+
+- Synchronization of coupled chaotic oscillators
+  - Model
+    - Two identical Rössler systems
+    - Parameters: a = 0.2, b = 0.2, c = 5.7
+    - Symmetric diffusive coupling through x
+  - Controls
+    - Coupling strength κ
+    - Initial x difference
+    - Run, pause, reset
+  - Observations
+    - x₁ and x₂ over time
+    - Absolute error |x₁ − x₂|
+    - Recent RMS error
+    - x-y phase portraits
+  - Investigation
+    - Uncoupled baseline
+    - Increase coupling in steps
+    - Repeat with a different initial condition
+  - Interpretation
+    - Look for sustained low error
+    - Compare more than one plot
+    - State the settings and limits of the numerical model
+  - Assessment
+    - Pre-test
+    - Observation table and analysis questions
+    - Post-test
